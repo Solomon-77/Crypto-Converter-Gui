@@ -4,7 +4,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         initComponents();
     }
     // ****************************Netbeans*************************************
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -34,23 +34,18 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(207, 207, 229));
-        jLabel1.setText("Currency Converter");
+        jLabel1.setText("Crypto to USD");
 
         jComboBox1.setBackground(new java.awt.Color(0, 11, 22));
         jComboBox1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " Lagyan nyo d2" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD","PHP","GBP","EUR","CAD"  }));
         jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         jComboBox2.setBackground(new java.awt.Color(0, 11, 22));
         jComboBox2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " USD" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD","PHP","GBP","EUR","CAD" }));
         jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jTextField1.setBackground(new java.awt.Color(0, 11, 22));
@@ -63,6 +58,11 @@ public class CurrencyConverter extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Convert");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -135,6 +135,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         jLabel9.setText(" $108.97");
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(19, 30, 53)));
 
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText(" ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -142,10 +143,6 @@ public class CurrencyConverter extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(651, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,10 +178,15 @@ public class CurrencyConverter extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(0, 523, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(254, 254, 254))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,23 +241,150 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
-    
+    }// </editor-fold>                        
+
     // *************************************************************************
     
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {                                     
         System.exit(0);
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }                                    
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         Crypto2Crypto jf2 = new Crypto2Crypto();
         jf2.show();
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Double outpt;
+        Double inpt = Double.parseDouble(jTextField1.getText());
+        
+        if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 51;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.77;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 0.92;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1.25;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 0.019;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.015;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 0.018;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 0.024;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 1.31;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 67.16;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 1.20;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1.63;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 1.09;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 55.98;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.83;
+            jLabel10.setText(""+outpt);
+        }   
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1.36;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 0.80;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 41.12;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.61;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 0.73;
+            jLabel10.setText(""+outpt);
+        }        
+    }                                        
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -265,7 +394,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -285,5 +414,5 @@ public class CurrencyConverter extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField1;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
