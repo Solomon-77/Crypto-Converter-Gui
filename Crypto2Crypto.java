@@ -3,6 +3,10 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     public Crypto2Crypto() {
         initComponents();
     }
+
+    double input = 0;
+    double result = 0;
+
     // ****************************Netbeans*************************************
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -272,8 +276,174 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        input = Double.parseDouble(jTextField1.getText());
+
+        if(evt.getSource()==jButton1)
+        {
+            if(jComboBox1.getSelectedItem()=="Bitcoin")
+            {
+                BTCConvert();                
+            }
+            else if(jComboBox1.getSelectedItem()=="Ethereum")
+            {
+                ETHConvert();
+            }
+            else if(jComboBox1.getSelectedItem()=="LiteCoin")
+            {
+                LTCConvert();
+            }
+            else if(jComboBox1.getSelectedItem()=="Cardano")
+            {
+                ADAConvert();
+            }
+            else
+            {
+                BNBConvert();
+            }
+        }
+    }//GEN-LAST:event_convertBtnActionPerformed
+
+
+    //Conversion Stuff
+    public void BTCConvert() {
+        if(jComboBox2.getSelectedItem()=="Bitcoin")
+        {
+            result = (input);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 14.22);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="LiteCoin")
+        {
+            result = (input * 76.7);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Cardano")
+        {
+            result = (input * 40067.79);
+            jLabel10.setText(""+result);
+        }
+        else
+        {
+            result = (input * 109.09);
+            jLabel10.setText(""+result);
+        }
+    }
+
+    public void ETHConvert() {
+        if(jComboBox2.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.070);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Ethereum")
+        {
+            result = (input);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Litecoin")
+        {
+            result = (input * 25.34);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Cardano")
+        {
+            result = (input * 2818);
+            jLabel10.setText(""+result);
+        }
+        else
+        {
+            result = (input * 7.68);
+            jLabel10.setText(""+result);
+        }
+    }
+
+    public void LTCConvert() {
+        if(jComboBox2.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.0028);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 0.04);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Litecoin")
+        {
+            result = (input);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Cardano")
+        {
+            result = (input * 110.84);
+            jLabel10.setText(""+result);
+        }
+        else
+        {
+            result = (input * 0.301937);
+            jLabel10.setText(""+result);
+        }
+    }
+
+    public void ADAConvert() {
+        if(jComboBox2.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.0000025);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 0.000355);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Litecoin")
+        {
+            result = (input * 0.301937);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Cardano")
+        {
+            result = (input);
+            jLabel10.setText(""+result);
+        }
+        else
+        {
+            result = (input * 0.002729);
+            jLabel10.setText(""+result);
+        }
+    }
+
+    public void BNBConvert() {
+        if(jComboBox2.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.009162);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 0.130174);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Litecoin")
+        {
+            result = (input * 3.30966);
+            jLabel10.setText(""+result);
+        }
+        else if(jComboBox2.getSelectedItem()=="Cardano")
+        {
+            result = (input * 366.194908);
+            jLabel10.setText(""+result);
+        }
+        else
+        {
+            result = (input);
+            jLabel10.setText(""+result);
+        }
+    }
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
