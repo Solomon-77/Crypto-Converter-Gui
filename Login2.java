@@ -92,7 +92,7 @@ public class Login2 extends javax.swing.JFrame {
                 String forUser = raf.readLine().substring(9);
                 String forPswd = raf.readLine().substring(9);
                 if(usr.equals(forUser) & pswd.equals(forPswd)){
-                    JOptionPane.showMessageDialog(null, "password matched");
+                    JOptionPane.showMessageDialog(null, "Login Successful");
                     Crypto2Crypto jf2 = new Crypto2Crypto();
                     jf2.show();
                     this.dispose();

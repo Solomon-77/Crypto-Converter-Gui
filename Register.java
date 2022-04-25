@@ -252,7 +252,7 @@ public class Register extends javax.swing.JFrame {
         readFile();
         countLines();
         addData(jTextField1.getText(),jPasswordField1.getText());  
-        JOptionPane.showMessageDialog(null,"Data Registered");  
+        JOptionPane.showMessageDialog(null,"Account Created");  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
