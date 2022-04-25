@@ -1,13 +1,133 @@
-/**
- *
- * @author Eustaquio
- */
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class Login2 extends javax.swing.JFrame {
 
     public Login2() {
         initComponents();
+    }
+    File c = new File("c:\\e files\\RAPIDCLICKS");
+    int ln;
+    String Username,Password,Email;
+    
+    void createFolder(){
+        if(!c.exists()){
+            c.mkdirs();
+        }
+    }
+    
+    void readFile(){
+        try {
+            FileReader fr = new FileReader(c+"\\logins.txt");
+            System.out.println("file exists!");
+        } catch (FileNotFoundException ex) {
+            try {
+                FileWriter fw = new FileWriter(c+"\\logins.txt");
+                System.out.println("File created");
+            } catch (IOException ex1) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        }
+        
+    }
+    
+    void addData(String username,String password){
+        try {
+            RandomAccessFile raf = new RandomAccessFile(c+"\\logins.txt", "rw");
+            for(int i=0;i<ln;i++){
+                raf.readLine();
+            }
+            if(ln>0){
+            raf.writeBytes("\r\n");
+            }
+            raf.writeBytes("Username:"+username+ "\r\n");
+            raf.writeBytes("Password:"+password+ "\r\n");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    void CheckData(String usr,String pswd){
+    
+        try 
+        {
+            RandomAccessFile raf = new RandomAccessFile(c+"\\logins.txt", "rw");
+            String line = raf.readLine();
+            Username=line.substring(9);
+            Password=raf.readLine().substring(9);
+            if(usr.equals(Username)& pswd.equals(Password))
+            {
+                JOptionPane.showMessageDialog(null, "Password matched");
+                Crypto2Crypto jf2 = new Crypto2Crypto();
+                jf2.show();
+                this.dispose();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Wrong user/Password");
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+    }
+    
+    void logic(String usr,String pswd){
+        try {
+            RandomAccessFile raf = new RandomAccessFile(c+"\\logins.txt", "rw");
+            for(int i=0;i<ln;i+=4){
+            
+                String forUser = raf.readLine().substring(9);
+                String forPswd = raf.readLine().substring(9);
+                if(usr.equals(forUser) & pswd.equals(forPswd)){
+                    JOptionPane.showMessageDialog(null, "password matched");
+                    Crypto2Crypto jf2 = new Crypto2Crypto();
+                    jf2.show();
+                    this.dispose();
+                    break;
+                }else if(i==(ln-3)){
+                    JOptionPane.showMessageDialog(null, "incorrect username/password");
+                    break;
+                }
+                // if you are using user & passwword without email
+                // then dont forget to replace  k<=2 with k=2 below
+                for(int k=1;k <=2;k++){
+                    raf.readLine();
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    void countLines(){
+        try {
+            ln=0;
+            RandomAccessFile raf = new RandomAccessFile(c+"\\logins.txt", "rw");
+            for(int i=0;raf.readLine()!=null;i++){
+                ln++;
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     // ****************************Netbeans*************************************
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -189,19 +309,10 @@ public class Login2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-            String userText;
-            String pwdText;
-            userText = jTextField1.getText();
-            pwdText = jPasswordField1.getText();
-            if (userText.equalsIgnoreCase("123") && pwdText.equalsIgnoreCase("123"))
-            {
-                Crypto2Crypto jf2 = new Crypto2Crypto();
-                jf2.show();
-                this.dispose();
-            } else
-            {
-                JOptionPane.showMessageDialog(this, "Invalid Username or Password");
-            }
+        createFolder(); 
+        readFile();
+        countLines();
+        logic(jTextField1.getText(), jPasswordField1.getText());
     }//GEN-LAST:event_jButton1MouseClicked
 
     public static void main(String args[]) {
